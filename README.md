@@ -1,5 +1,11 @@
-# myscripts
+# My Scripts
 
+I mostly test local and AI models nowadays, but will try to also upload old scripts.
+
+
+#Script: testinglocalmodel.py
+
+##Is a little program I am using to check local models I downloaded via Ollama
 
 Building a Test Matrix:
 To test the output of your local models, you can create a matrix that evaluates several criteria:
