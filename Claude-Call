@@ -35,7 +35,7 @@ try:
 
     outline = ''.join(block.text for block in initial_response.content if block.type == 'text').strip()
 except Exception as e:
-    print(f"An error occurred while connecting to the OpenAI API: {e}")
+    print(f"An error occurred while connecting to the Claude API: {e}")
     exit(1)
 
 print(outline + "\n")
