@@ -12,13 +12,12 @@ This project provides a minimal FastAPI backend and React-based frontend for rea
 
 ### Running
 
-Install dependencies and start:
+Create the conda environment from the repository root and start the server:
 
 ```bash
+conda env create -f ../../environment.yml  # run once
+conda activate myscripts
 cd backend
-python3 -m venv venv
-. venv/bin/activate
-pip install -r requirements.txt
 uvicorn main:app --reload
 ```
 
@@ -28,7 +27,8 @@ uvicorn main:app --reload
 
 ## Security Notes
 
-- Change `SECRET_KEY`, `ADMIN_USER`, and `ADMIN_PASS` in `.env`.
+- Copy `backend/.env.example` to `backend/.env` and change `SECRET_KEY`,
+  `ADMIN_USER`, and `ADMIN_PASS`.
 - Use HTTPS termination in production.
 
 This is a starting point for a full-featured monitoring solution.

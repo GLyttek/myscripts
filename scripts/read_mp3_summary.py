@@ -1,19 +1,15 @@
 from faster_whisper import WhisperModel
 from groq import Groq
+import os
 
-def open_file(filepath):
-    with open(filepath, 'r', encoding='utf-8') as infile:
-        return infile.read()
-
-API_KEY = open_file('groqapikey.txt')
-client = Groq(api_key=API_KEY)
+client = Groq(api_key=os.getenv("GROQ_API_KEY", ""))
 
 def transcribe_audio(audio_path, model_size="medium"):
     model = WhisperModel(model_size, device="cpu")
     segments, _ = model.transcribe(audio_path)
     return " ".join([segment.text for segment in segments])
 
-audio_file_path = "/path/to/your/mp3"  # Replace with your audio file path
+audio_file_path = os.getenv("AUDIO_FILE", "/path/to/your/mp3")
 transcribed_text = transcribe_audio(audio_file_path)
 with open("transcription.txt", "w") as file:
     file.write(transcribed_text)

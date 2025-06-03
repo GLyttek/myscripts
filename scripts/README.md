@@ -4,6 +4,12 @@ This directory contains small utility scripts for working with AI models.
 Each script is saved with a descriptive name and `.py` extension so they can be
 run using Python.
 
+The API-based scripts expect the relevant keys to be provided as environment
+variables:
+
+- `ANTHROPIC_API_KEY` for `claude_call.py`
+- `GROQ_API_KEY` for the Groq examples
+
 ## Scripts
 
 ### `claude_call.py`

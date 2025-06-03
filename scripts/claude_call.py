@@ -18,7 +18,7 @@ def generate_messages(section: str) -> List[dict]:
         }
     ]
 
-client: anthropic.Anthropic = anthropic.Anthropic(api_key=)
+client: anthropic.Anthropic = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY", ""))
 
 print("Generating policy outline...")
 
@@ -60,10 +60,10 @@ for i, section in tqdm(enumerate(sections, start=1), total=len(sections), desc="
     word_document.add_paragraph("\n")
     html_sections.append(markdown(detailed_info))
 
-docx_file_path = "e.docx"
+docx_file_path = "output.docx"
 with open(docx_file_path, "wb") as doc_file:
     word_document.save(doc_file)
 
-html_file_path = ".html"
+html_file_path = "output.html"
 with open(html_file_path, "w") as html_file:
     html_file.write("\n".join(html_sections))
