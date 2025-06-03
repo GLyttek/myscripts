@@ -1,0 +1,12 @@
+{
+  "files": [
+    {
+      "path": "/etc/ssh/sshd_config",
+      "sha256": "expectedhash1"
+    },
+    {
+      "path": "/etc/passwd",
+      "sha256": "expectedhash2"
+    }
+  ]
+}

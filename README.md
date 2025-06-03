@@ -12,5 +12,11 @@ All scripts are located in the `scripts/` directory.
   expert opinions using the Groq API.
 - **testing_local_model.py** – Evaluate local models with Ollama and save the
   outputs.
+- **compliance/scan.py** – Prototype baseline scanner that checks file hashes
+  against a JSON-defined configuration.
 
 See [scripts/README.md](scripts/README.md) for more details on each script.
+
+The `compliance` directory contains a **prototype** baseline scanner. This
+repository does not implement a production-ready compliance monitoring
+platform.
