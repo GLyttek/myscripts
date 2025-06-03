@@ -1,15 +1,15 @@
 from groq import Groq
+import os
 
-
-# Initialize the Groq API
-client= Groq(api_key="<key-here>")
+# Initialize the Groq API using an environment variable
+client = Groq(api_key=os.getenv("GROQ_API_KEY", ""))
 
 # Initialize the conversation list
 conversation = [
     {"role": "system", "content": "You are a helpful assistant."},
 ]
 
-# Function to interact with GPT-3
+# Function to interact with the Groq model
 def chat_with_groq(prompt, conversation):
     model_engine = "mixtral-8x7b-32768"
     

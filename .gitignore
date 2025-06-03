@@ -1,0 +1,21 @@
+# Python artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Environments
+venv/
+.venv/
+ENV/
+env/
+
+# dotenv files
+*.env
+
+# Output files
+*.docx
+*.html
+
+# Node
+node_modules/
+

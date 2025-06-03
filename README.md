@@ -3,6 +3,15 @@
 This repository contains small Python utilities for interacting with AI models.
 All scripts are located in the `scripts/` directory.
 
+## Setup
+
+Create the conda environment and install the required Python packages:
+
+```bash
+conda env create -f environment.yml
+conda activate myscripts
+```
+
 ## Available Scripts
 
 - **claude_call.py** – Query Anthropic's Claude model and save results to a DOCX
@@ -14,3 +23,7 @@ All scripts are located in the `scripts/` directory.
   outputs.
 
 See [scripts/README.md](scripts/README.md) for more details on each script.
+
+The repository also includes a simple monitoring demo located in
+`monitoring-app/`. Consult its README for instructions on running the FastAPI
+backend and React frontend.

@@ -1,0 +1,22 @@
+name: myscripts
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      - python-docx
+      - markdown2
+      - tqdm
+      - anthropic
+      - groq
+      - faster-whisper
+      - ollama
+      - langchain-community
+      - psutil
+      - pyjwt
+      - requests
+      - fastapi
+      - uvicorn
+      - websockets
+      - python-dotenv
