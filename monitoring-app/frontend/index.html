@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Debian Monitoring Dashboard</title>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <style>
+      body {
+        background-color: #121212;
+        color: #eee;
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        max-width: 960px;
+        margin: auto;
+        padding: 1rem;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+      }
+      .panel {
+        background: #1e1e1e;
+        padding: 1rem;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      function Dashboard() {
+        const [data, setData] = React.useState({ metrics: {}, analysis: {} });
+
+        React.useEffect(() => {
+          const ws = new WebSocket(`ws://${location.host}/ws/metrics`);
+          ws.onmessage = (event) => {
+            try {
+              const message = JSON.parse(event.data);
+              setData(message);
+            } catch (e) {
+              console.error(e);
+            }
+          };
+          return () => ws.close();
+        }, []);
+
+        const m = data.metrics;
+        const a = data.analysis;
+        return (
+          <div className="container">
+            <h1>Debian Monitoring Dashboard</h1>
+            <div className="grid">
+              <div className="panel">
+                <h3>CPU Usage</h3>
+                <p>{m.cpu}%</p>
+              </div>
+              <div className="panel">
+                <h3>Memory Usage</h3>
+                <p>{m.memory && m.memory.percent}%</p>
+              </div>
+              <div className="panel">
+                <h3>Disk Usage</h3>
+                <p>{m.disk && m.disk.percent}%</p>
+              </div>
+              <div className="panel">
+                <h3>Ollama Analysis</h3>
+                <pre style={{whiteSpace: 'pre-wrap'}}>{JSON.stringify(a, null, 2)}</pre>
+              </div>
+            </div>
+          </div>
+        );
+      }
+
+      ReactDOM.render(<Dashboard />, document.getElementById('root'));
+    </script>
+  </body>
+</html>
