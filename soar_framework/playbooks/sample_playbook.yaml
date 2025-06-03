@@ -1,0 +1,8 @@
+steps:
+  - action: fetch_alerts
+  - action: isolate_host
+    params:
+      host: "host-123"
+  - action: quarantine_resource
+    params:
+      resource: "vm-456"
