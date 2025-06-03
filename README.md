@@ -14,3 +14,14 @@ All scripts are located in the `scripts/` directory.
   outputs.
 
 See [scripts/README.md](scripts/README.md) for more details on each script.
+
+## SOAR Framework
+
+The `soar_framework` package provides a minimal incident response
+automation framework. It demonstrates dynamic playbook execution with
+stub integrations for SIEM, EDR and cloud security APIs. An Ollama-based
+LLM is used to generate forensic documentation such as chain of custody
+records and incident reports.
+
+Run `python -m soar_framework.main` to execute the sample playbook.
+
