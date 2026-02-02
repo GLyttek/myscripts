@@ -69,6 +69,61 @@ python awareness_generator.py
 
 ---
 
+### 4. Local RAG with Ollama (`local-rag/`)
+
+Lightweight RAG implementation using Ollama embeddings and PyTorch cosine similarity.
+
+```bash
+cd local-rag
+ollama pull mxbai-embed-large
+python localrag.py
+```
+
+**Features:**
+- Query rewriting for better retrieval
+- PyTorch-based cosine similarity
+- Simple vault.txt knowledge base
+- Conversation context awareness
+
+**Variants:**
+- `localrag.py` - Full version with query rewriting
+- `localrag_no_rewrite.py` - Simple direct retrieval
+
+---
+
+### 5. YouTube RAG (`youtube-rag/`)
+
+Query YouTube video transcripts using RAG.
+
+```bash
+cd youtube-rag
+python yt1.py --url "https://youtube.com/watch?v=VIDEO_ID"
+```
+
+**Features:**
+- YouTube transcript download
+- Transcript chunking and embedding
+- Semantic search over video content
+
+---
+
+### 6. Agent Patterns (`agent-patterns/`)
+
+Coffee shop simulation demonstrating basic LLM agent patterns.
+
+```bash
+cd agent-patterns
+python main.py
+```
+
+**Demonstrates:**
+- ReAct pattern (Reason + Act)
+- Tool calling
+- State management
+- Domain-specific agents
+
+---
+
 ## Setup
 
 All projects use Ollama for local LLM inference.
@@ -100,6 +155,9 @@ These experiments taught key concepts:
 3. **Vector Databases** - FAISS indexing, similarity search, persistence
 4. **Prompt Engineering** - System prompts, context injection, output formatting
 5. **Security Applications** - MITRE ATT&CK integration, awareness content
+6. **Query Rewriting** - Improving retrieval by reformulating questions
+7. **Agent Patterns** - ReAct, tool use, state management
+8. **Media Processing** - YouTube transcripts as knowledge sources
 
 ---
 
