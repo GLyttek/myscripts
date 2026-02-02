@@ -24,6 +24,21 @@ conda activate myscripts
 
 See [scripts/README.md](scripts/README.md) for more details on each script.
 
-The repository also includes a simple monitoring demo located in
-`monitoring-app/`. Consult its README for instructions on running the FastAPI
-backend and React frontend.
+## LLM Experiments
+
+The `llm-experiments/` directory contains more advanced AI experiments:
+
+- **mitre-attack/** – Extract MITRE ATT&CK TTPs from cybersecurity scenarios
+- **iso-vector-db/** – RAG system with FAISS vector database
+- **security-awareness/** – Generate security awareness training content
+
+See [llm-experiments/README.md](llm-experiments/README.md) for details.
+
+## Monitoring App
+
+The `monitoring-app/` directory contains a system monitoring demo with FastAPI
+backend and React frontend. See its README for setup instructions.
+
+## Related
+
+- [Lyttek AI Journey](https://github.com/GLyttek/lyttek-ai-journey) – Documentation of our AI automation journey
